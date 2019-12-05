@@ -19,7 +19,7 @@ const startApp = ([ client, db ]) => {
     app.use('/vanilla', express.static('vanilla', { extensions: [ 'html' ] }))
     app.use('/react', express.static('react'))
     
-    app.get('/quote', addCors, findQuote(db))
+    app.get('/quote', addCors, getQuote(db))
 
     app.listen(process.env.PORT, () => console.log(`Listening on port ${process.env.PORT}`))
 }

@@ -1,0 +1,53 @@
+body {
+	font-family: "Helvetica Neue", sans-serif;
+	font-size: 16px;
+	padding-top: 100px;
+	transition: background-color 0.3s;
+}
+
+.btn {
+	opacity: 0.7;
+}
+
+#author {
+	text-align: right;
+}
+
+#footer {
+	text-align: center;
+}
+
+#new-quote {
+	float: right;
+}
+
+#photo {
+	border-radius: 50%;
+	height: 50px;
+	object-fit: contain;
+	width: 50px;
+}
+
+#quote {
+	font-size: 1.5em;
+}
+
+#quote-box {
+	box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.2);
+	margin: auto;
+	margin-bottom: 15px;
+	padding: 40px;
+	transition: background-color 0.3s;
+}
+
+@media (max-width: 700px) {
+	#quote-box {
+		width: 80%;
+	}
+}
+
+@media (max-width: 400px) {
+	#quote-box {
+		width: 95%;
+	}
+}
