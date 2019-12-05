@@ -1,0 +1,37 @@
+{
+  "name": "pony-quote-machine",
+  "version": "1.0.0",
+  "description": "An API to fetch and display quotes from ponies.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build [origin] -d [destination] --public-url /randtools/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SavagePixie/pony-quote-machine.git"
+  },
+  "keywords": [
+    "api",
+    "react",
+    "node",
+    "express",
+    "quotes"
+  ],
+  "author": "SavagePixie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SavagePixie/pony-quote-machine/issues"
+  },
+  "homepage": "https://github.com/SavagePixie/pony-quote-machine#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.3.5",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
