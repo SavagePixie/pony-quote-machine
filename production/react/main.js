@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom'
 import React, { useState, useEffect, useLayoutEffect, useRef } from 'react'
 
-const randInt = require('../components/randInt.js')
+const randInt = require('../../src/randInt.js')
 
 const newButton = () => {
    const buttons = [

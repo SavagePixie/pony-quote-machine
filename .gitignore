@@ -1,2 +1,8 @@
+# development folders
 node_modules
+.cache
 .env
+
+# compiled react
+public/react/*.js
+public/react/*.js.map
