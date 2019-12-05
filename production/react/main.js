@@ -16,10 +16,8 @@ const newButton = () => {
   return buttons[randInt(0, buttons.length - 1)]
 }
 
-//Set an element's style
 const setStyle = (element, style, specs) => document.querySelector(element).style[style] = specs
 
-//Let's change colours based on the pony's colour pattern
 const setColours = colours => {
 	setStyle('body', 'backgroundColor', colours.background)
 	setStyle('#quote-box', 'backgroundColor', colours.box)
@@ -27,7 +25,6 @@ const setColours = colours => {
 	setStyle('#me', 'color', colours.emphasis)
 }
 
-//Let's do some React
 const QuoteMachine = () => {
   const [ pony, setPony ] = useState({})
   const [ prevQuote, setPrevQuote ] = useState('')
