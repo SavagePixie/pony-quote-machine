@@ -1,8 +1,6 @@
 require('dotenv').config()
 const mongo = require("mongodb")
 
-module.exports = { close, connect }
-
 const close = client => () => client.close().then(() => {
     console.log("See you next time!")
     process.exit()
@@ -14,3 +12,5 @@ const connect = () =>
         client,
         client.db(process.env.MONGO_DB)
     ]))
+
+module.exports = { close, connect }
