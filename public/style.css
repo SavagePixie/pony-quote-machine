@@ -11,6 +11,13 @@ main, footer {
 	min-width: 300px;
 }
 
+.box {
+	box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.2);
+	grid-area: middle;
+	padding: 40px;
+	transition: background-color 0.3s;
+}
+
 .buttons {
 	display: flex;
 	flex-direction: row;
@@ -40,7 +47,7 @@ main, footer {
 	grid-template-columns: 1fr 2fr 1fr;
 	grid-template-rows: 3fr 1fr;
 	margin: auto;
-	width: 80%;
+	width: 70%;
 }
 
 #author {
@@ -65,21 +72,13 @@ main, footer {
 	font-size: 1.5em;
 }
 
-#quote-box {
-	box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.2);
-	grid-area: middle;
-	margin: auto;
-	margin-bottom: 15px;
-	padding: 40px;
-	transition: background-color 0.3s;
-}
-
 @media (max-width: 700px) {
 	.container {
 		grid-template-areas: 
 			"middle"
 			"bottom";
 		grid-template-columns: 1fr;
+		width: 80%;
 	}
 }
 

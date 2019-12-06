@@ -8,18 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
     <link rel="stylesheet" href="/style.css">
   </head>
   
   <body>
     <div id="wrapper" class="container">
-      <div id="quote-box" class="col-md-6">
+      <div id="quote-box" class="box">
         <p id="quote"></p>
         <p id="author"></p>
-        <a class="btn btn-light" id="tweet-quote" href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-        <button id="new-quote" class="btn btn-light" onclick="getQuote()"></button>
+        <div class="buttons">
+          <a class="btn btn-light" id="tweet-quote" href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+          <button id="new-quote" class="btn btn-light" onclick="getQuote()"></button>
+        </div>
       </div>
       <div id="footer">
         <p>by <a id="me" href="https://github.com/SavagePixie/" target="_blank">SavagePixie</a></p>   
