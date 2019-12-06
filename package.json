@@ -9,8 +9,7 @@
     "build:react": "npm run clean:react && parcel build production/react/*.js -d public/react --public-url public/react",
     "clean": "rm -rf public/",
     "clean:react": "rm -rf public/react/*.js",
-    "copy": "npm run copy:public",
-    "copy:public": "cp -a production/. public/"
+    "copy": "cp -a production/. public/"
   },
   "repository": {
     "type": "git",
