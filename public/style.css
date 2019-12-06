@@ -39,7 +39,7 @@ main, footer {
 }
 
 .btn:active {
-	border-color: #999;
+	border: 2px ridge #888;
 }
 
 .container {
