@@ -1,20 +1,6 @@
 import ReactDOM from 'react-dom'
-import React, { useState, useEffect, useLayoutEffect, useRef } from 'react'
-
-const randInt = require('../../src/randInt.js')
-
-const newButton = () => {
-   const buttons = [
-    'Another one!',
-    'One more!',
-    'I need more!',
-    'Next!',
-    'Again!',
-    'Let\'s keep doing that!'
-  ]
-  
-  return buttons[randInt(0, buttons.length - 1)]
-}
+import React, { useState, useEffect, useLayoutEffect } from 'react'
+import getBtnText from '../../public/getBtnText'
 
 const setStyle = (element, style, specs) => document.querySelector(element).style[style] = specs
 
@@ -38,7 +24,7 @@ const QuoteMachine = () => {
           if (data.quote == prevQuote) return fetchPony()
           else {
             setPony(data)
-            setButton(newButton())
+            setButton(getBtnText())
           }
         })
     fetchPony()
