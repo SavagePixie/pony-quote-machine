@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm run clean && parcel build production/react/main.js -d public/react/ --public-url public/",
-    "clean": "rm -rf public/react/"
+    "clean": "rm -rf public/react/*.js"
   },
   "repository": {
     "type": "git",

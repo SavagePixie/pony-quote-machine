@@ -50,15 +50,17 @@ const QuoteMachine = () => {
     <>
       <QuoteText quote={pony.quote} />
       <QuoteAuthor pony={pony.name} image={pony.image} />
-      <TweetQuote quote={pony.quote} pony={pony.name} />
-      <Button setPony={() => setPrevQuote(pony.quote)} text={button} />
+      <div className='buttons'>
+        <TweetQuote quote={pony.quote} pony={pony.name} />
+        <Button setPony={() => setPrevQuote(pony.quote)} text={button} />
+      </div>
     </>
   )
 }
 
-const Button = props => <button id='new-quote' className='btn btn-light' onClick={props.setPony}>{props.text}</button>
+const Button = props => <button id='new-quote' className='btn' onClick={props.setPony}>{props.text}</button>
 
-const TweetQuote = props => <a className='btn btn-light' id='tweet-quote' href={`https://twitter.com/intent/tweet?hashtags=quotes&text=${encodeURIComponent(props.quote + '\nBy ' + props.pony)}`} target='_blank'><i className='fa fa-twitter'></i></a>
+const TweetQuote = props => <a className='btn' id='tweet-quote' href={`https://twitter.com/intent/tweet?hashtags=quotes&text=${encodeURIComponent(props.quote + '\nBy ' + props.pony)}`} target='_blank'><i className='fa fa-twitter'></i></a>
 
 const QuoteAuthor = props => <p id='author'>&mdash; {props.pony} <img id='photo' src={props.image} /></p>
 
