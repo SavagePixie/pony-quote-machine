@@ -1,16 +1,5 @@
 import getBtnText from '../modules/getBtnText.js'
 
-const BUTTONS = [
-	'Another one!',
-	'One more!',
-	'I need more!',
-	'Next!',
-	'Again!',
-	'Let\'s keep doing that!'
-]
-
-const randItem = item => item[Math.floor(Math.random() * item.length)]
-
 const setContent = (element, tag, content) => document.querySelector(element)[tag] = content
 
 const setStyle = (element, style, specs) => document.querySelector(element).style[style] = specs

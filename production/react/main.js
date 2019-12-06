@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom'
 import React, { useState, useEffect, useLayoutEffect } from 'react'
-import getBtnText from '../../modules/getBtnText'
+import getBtnText from '../modules/getBtnText'
 
 const setStyle = (element, style, specs) => document.querySelector(element).style[style] = specs
 
