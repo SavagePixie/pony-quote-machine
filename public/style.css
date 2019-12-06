@@ -5,6 +5,10 @@ body {
 	transition: background-color 0.3s;
 }
 
+a {
+	text-decoration: none;
+}
+
 main, footer {
 	margin: auto;
 	width: 40%;
