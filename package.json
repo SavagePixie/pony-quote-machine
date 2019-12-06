@@ -5,8 +5,13 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run clean && parcel build production/react/main.js -d public/react/ --public-url public/",
-    "clean": "rm -rf public/react/*.js"
+    "build": "npm run clean && npm run copy:public && npm run copy:shared && npm run build:react",
+    "build:react": "npm run clean:react && parcel build production/react/*.js -d public/react --public-url public/react",
+    "clean": "rm -rf public/",
+    "clean:react": "rm -rf public/react/*.js",
+    "copy:modules": "cp -a modules/. public/modules/",
+    "copy:public": "cp -a production/. public/",
+    "copy:shared": "cp -a shared/. public/shared/"
   },
   "repository": {
     "type": "git",

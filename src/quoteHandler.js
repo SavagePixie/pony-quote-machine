@@ -1,4 +1,4 @@
-const randInt = require('./randInt.js')
+const randInt = require('../shared/randInt')
 
 const countQuotes = db => db.collection('quotes').countDocuments({})
 

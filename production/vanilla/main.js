@@ -1,3 +1,5 @@
+import getBtnText from '../modules/getBtnText.js'
+
 const BUTTONS = [
 	'Another one!',
 	'One more!',
@@ -29,7 +31,7 @@ const changePony = (pony, pName) => {
 
 const changeQuote = data => {
 	setContent('#quote', 'innerHTML', `<i class="fa fa-quote-left"></i> ${data.quote}`)
-	setContent('#new-quote', 'innerHTML', randItem(BUTTONS))
+	setContent('#new-quote', 'innerHTML', getBtnText())
 	setContent('#new-quote', 'onclick', () => getQuote(data.name, data.quote))
 	setContent('#tweet-quote', 'href', `https://twitter.com/intent/tweet?hashtags=quotes&text=${encodeURIComponent(data.quote + '\nBy ' + data.name)}`)
 }

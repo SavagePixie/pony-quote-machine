@@ -1,4 +1,4 @@
-import randInt from '../src/randInt'
+import randInt from '../shared/randInt.js'
 
 export default () => texts[randInt(0, texts.length - 1)]
 
