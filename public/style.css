@@ -28,15 +28,14 @@ main, footer {
 .btn {
 	background-color: #fff;
 	border-radius: 5px;
-	border-width: 0px;
+	border: 2px solid #fff;
 	color: #111;
 	opacity: 0.6;
 	padding: 12px;
 }
 
 .btn:active {
-	border-width: 2px;
-	padding: 10px;
+	border-color: #999;
 }
 
 .container {
