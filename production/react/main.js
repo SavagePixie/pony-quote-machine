@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom'
-import React, { useState, useEffect, useLayoutEffect, useReducer } from 'react'
+import React, { useEffect, useLayoutEffect, useReducer } from 'react'
 import getBtnText from '../modules/getBtnText'
 import setColours from '../modules/setColours'
 import reducer from './stateHandler'
