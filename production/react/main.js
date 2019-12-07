@@ -1,47 +1,41 @@
 import ReactDOM from 'react-dom'
-import React, { useState, useEffect, useLayoutEffect } from 'react'
+import React, { useState, useEffect, useLayoutEffect, useReducer } from 'react'
 import getBtnText from '../modules/getBtnText'
 import setColours from '../modules/setColours'
-/*
-const setStyle = (element, style, specs) => document.querySelector(element).style[style] = specs
+import reducer from './stateHandler'
 
-const setColours = colours => {
-	setStyle('body', 'backgroundColor', colours.background)
-	setStyle('#quote-box', 'backgroundColor', colours.box)
-	setStyle('#photo', 'border', `1px solid ${colours.background}`)
-	setStyle('#me', 'color', colours.emphasis)
-}*/
-
-
+const initialState = {
+  status: 'fetching',
+  pony: {},
+  error: null,
+}
 
 const QuoteMachine = () => {
-  const [ pony, setPony ] = useState({})
-  const [ prevQuote, setPrevQuote ] = useState('')
-  const [ button, setButton ] = useState('')
+  const [ state, dispatch ] = useReducer(reducer, initialState)
+
+  const fetchPony = currQuote => fetch('/quote')
+    .then(res => res.json())
+    .then(data => data.quote == currQuote
+      ? fetchPony(currQuote)
+      : dispatch({ type: 'RESOLVE', data, button: getBtnText() })
+    )
+    .catch(error => dispatch({ type: 'ERROR', error }))
   
   useEffect(() => {
-    const fetchPony = () => 
-      fetch('/quote')
-        .then(res => res.json())
-        .then(data => {
-          if (data.quote == prevQuote) return fetchPony()
-          else {
-            setPony(data)
-            setButton(getBtnText())
-          }
-        })
-    fetchPony()
-  }, [prevQuote])
+    if (state.status == 'fetching') fetchPony(state.pony.quote)
+  }, [state.status])
   
-  useLayoutEffect(() => (pony.name) && setColours(pony.colours), [pony.name])
+  useLayoutEffect(() => {
+    if (state.status == 'success') setColours(state.pony.colours)
+  }, [state.pony.name])
   
   return(
     <>
-      <QuoteText quote={pony.quote} />
-      <QuoteAuthor pony={pony.name} image={pony.image} />
+      <QuoteText quote={state.pony.quote} />
+      <QuoteAuthor pony={state.pony.name} image={state.pony.image} />
       <div className='buttons'>
-        <TweetQuote quote={pony.quote} pony={pony.name} />
-        <Button setPony={() => setPrevQuote(pony.quote)} text={button} />
+        <TweetQuote quote={state.pony.quote} pony={state.pony.name} />
+        <Button setPony={() => dispatch({ type: 'FETCH' })} text={state.button} />
       </div>
     </>
   )
