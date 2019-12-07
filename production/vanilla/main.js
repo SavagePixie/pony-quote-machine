@@ -1,15 +1,7 @@
 import getBtnText from '../modules/getBtnText.js'
+import setColours from '../modules/setColours.js'
 
 const setContent = (element, tag, content) => document.querySelector(element)[tag] = content
-
-const setStyle = (element, style, specs) => document.querySelector(element).style[style] = specs
-
-const setColours = colours => {
-	setStyle('body', 'backgroundColor', colours.background)
-	setStyle('#quote-box', 'backgroundColor', colours.box)
-	setStyle('#photo', 'border', `1px solid ${colours.background}`)
-	setStyle('#me', 'color', colours.emphasis)
-}
 
 const changePony = (pony, pName) => {
 	if (pony.name != pName) {

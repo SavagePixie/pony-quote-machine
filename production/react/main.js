@@ -1,7 +1,8 @@
 import ReactDOM from 'react-dom'
 import React, { useState, useEffect, useLayoutEffect } from 'react'
 import getBtnText from '../modules/getBtnText'
-
+import setColours from '../modules/setColours'
+/*
 const setStyle = (element, style, specs) => document.querySelector(element).style[style] = specs
 
 const setColours = colours => {
@@ -9,7 +10,9 @@ const setColours = colours => {
 	setStyle('#quote-box', 'backgroundColor', colours.box)
 	setStyle('#photo', 'border', `1px solid ${colours.background}`)
 	setStyle('#me', 'color', colours.emphasis)
-}
+}*/
+
+
 
 const QuoteMachine = () => {
   const [ pony, setPony ] = useState({})
