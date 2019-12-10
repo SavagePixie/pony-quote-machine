@@ -10,19 +10,20 @@ const initialState = {
   error: null,
 }
 
+
 const QuoteMachine = () => {
   const [ state, dispatch ] = useReducer(reducer, initialState)
 
-  const fetchPony = currQuote => fetch('/quote')
+  const fetchPony = (currQuote, name) => fetch(name == undefined ? '/quote' : `/quote/${name}`)
     .then(res => res.json())
     .then(data => data.quote == currQuote
-      ? fetchPony(currQuote)
+      ? fetchPony(currQuote, name)
       : dispatch({ type: 'RESOLVE', data, button: getBtnText() })
     )
     .catch(error => dispatch({ type: 'ERROR', error }))
   
   useEffect(() => {
-    if (state.status == 'fetching') fetchPony(state.pony.quote)
+    if (state.status == 'fetching') fetchPony(state.pony.quote, state.name)
   }, [state.status])
   
   useLayoutEffect(() => {
@@ -35,6 +36,7 @@ const QuoteMachine = () => {
       <QuoteAuthor pony={state.pony.name} image={state.pony.image} />
       <div className='buttons'>
         <TweetQuote quote={state.pony.quote} pony={state.pony.name} />
+        <Button setPony={() => dispatch({ type: 'FETCH', name: state.pony.name })} text={`More ${state.pony.name}`} />
         <Button setPony={() => dispatch({ type: 'FETCH' })} text={state.button} />
       </div>
     </>

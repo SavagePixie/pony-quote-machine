@@ -2,6 +2,7 @@ const actions = {
     FETCH: (state, action) => ({
       ...state,
       status: 'fetching',
+      name: action.name || undefined,
     }),
     RESOLVE: (state, action) => ({
       ...state,
