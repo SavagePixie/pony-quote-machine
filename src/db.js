@@ -1,10 +1,9 @@
 require('dotenv').config()
 const mongo = require("mongodb")
 
-const close = client => () => client.close().then(() => {
-    console.log("See you next time!")
-    process.exit()
-})
+const close = client => () => client.close()
+    .then(() => console.log("See you next time!"))
+    .then(() => process.exit())
 
 const connect = () =>
   mongo.MongoClient.connect(process.env.MONGO_URI, { useUnifiedTopology: true, useNewUrlParser: true })
