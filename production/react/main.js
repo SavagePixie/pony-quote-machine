@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom'
 import React, { useEffect, useLayoutEffect, useReducer } from 'react'
 import getBtnText from '../modules/getBtnText'
 import setColours from '../modules/setColours'
-import reducer from './stateHandler'
+import reducer from '../modules/stateHandler'
 
 const initialState = {
   status: 'fetching',
