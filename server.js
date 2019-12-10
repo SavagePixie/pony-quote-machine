@@ -5,7 +5,7 @@ require('dotenv').config()
 const express = require('express')
 
 const dbHandler = require('./src/db')
-const getQuote = require('./src/quoteHandler')
+const { getQuote, getPonyQuote } = require('./src/quoteHandler')
 
 const addCors = (req, res, next) => {
     res.set({ 'Access-Control-Allow-Origin': '*' })
@@ -19,6 +19,7 @@ const startApp = ([ client, db ]) => {
     app.use('/react', express.static('react'))
     
     app.get('/quote', addCors, getQuote(db))
+    app.get('/quote/:name', addCors, getPonyQuote(db))
 
     app.listen(process.env.PORT, () => console.log(`Listening on port ${process.env.PORT}`))
 
