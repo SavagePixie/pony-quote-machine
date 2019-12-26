@@ -20,7 +20,8 @@
     "react",
     "node",
     "express",
-    "quotes"
+    "quotes",
+    "ponies"
   ],
   "author": "SavagePixie",
   "license": "ISC",
