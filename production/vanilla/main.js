@@ -5,7 +5,7 @@ const setContent = (element, tag, content) => document.querySelector(element)[ta
 
 const changePony = (pony, pName) => {
 	if (pony.name != pName) {
-		setContent('#author', 'innerHTML', `&mdash; ${pony.name} <img id='photo' src=${pony.image} />`)
+		setContent('#author', 'innerHTML', `&mdash; ${pony.name} <img id="photo" src="${pony.image}" />`)
 		setColours(pony.colours)
 	}
 }
